@@ -1,0 +1,5 @@
+cd .\Downloads\
+cd .\Redis-x64-3.0.504\
+start redis-server.exe
+
+celery -A celerytimer worker --loglevel=INFO --pool=eventlet
