@@ -74,17 +74,17 @@ WSGI_APPLICATION = 'celerytimer.wsgi.application'
 # Example configuration for Redis as broker and result backend
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERY_TIMEZONE = 'UTC'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Kolkata'
+CELERY_ENABLE_UTC = True
 
 # Periodic task schedule
 from celery.schedules import crontab
 
 CELERY_BEAT_SCHEDULE = {
-    'check-timers-every-minute': {
-        'task': 'timertask.tasks.check_timer_end',
-        'schedule': crontab(minute='*/1'),  # Every minute
-        'args':('task_name',)
-    },
+    
 }
 
 
