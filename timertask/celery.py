@@ -11,7 +11,7 @@ app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
 app.conf.beat_schedule = {
     'check-all-timers-every-minute': {
-        'task': 'timertask.tasks.check_all_timers',
+        'task': 'timertask.tasks.check_timer_end',
         'schedule': crontab(minute='*/1'),  # every minute
     },
 }

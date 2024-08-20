@@ -9,7 +9,7 @@ from datetime import datetime
 
 @receiver(post_save, sender=Timer)
 def post_save_timer(sender, instance, created, **kwargs):
-    if created:
+    if instance.start_time and instance.end_time:
         win32api.MessageBox(0, "post_save signal triggered", "Debug Info", 0x00001000)
         current_date = datetime.now().date()
         end_time = instance.end_time

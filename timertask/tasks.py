@@ -36,7 +36,7 @@ def check_timer_end(task_name):
         print(f"Error: {e}")
 
 
-@shared_task
+"""@shared_task
 def check_all_timers():
     try:
         current_time = datetime.now().time()
@@ -50,7 +50,7 @@ def check_all_timers():
             timer.save()
             win32api.MessageBox(0, f"Timer {timer.name} notified state updated and saved.", "Debug Info", 0x00001000)
     except Exception as e:
-        win32api.MessageBox(0, f"Error: {e}", "Notification", 0x00001000)
+        win32api.MessageBox(0, f"Error: {e}", "Notification", 0x00001000)"""
 
 """@shared_task
 def check_timer_end(task_name):

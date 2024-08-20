@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'timertask',
-    'celery'
+    'celery',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -79,13 +80,6 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Asia/Kolkata'
 CELERY_ENABLE_UTC = True
-
-# Periodic task schedule
-from celery.schedules import crontab
-
-CELERY_BEAT_SCHEDULE = {
-    
-}
 
 
 # Database
